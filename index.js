@@ -8,11 +8,15 @@ const app = express();
 
 // we have global object PROCESS that gives us to access in current process. It has two Property ene and NODE_ENE
 
-
-
+if(app.get('env') === 'devlopment'){
+  app.use(morgan('tiny'));
+  console.log('morgan is enable...');
+}
 
 // Express is nothing but a bunch of middleware function.
 // Built in middleware
+
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
